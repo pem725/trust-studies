@@ -10,12 +10,4 @@
         }
         return $conn;
     }
-
-    function get_session_data($conn, $token) {
-        $query = 'SELECT * FROM session WHERE token=?';
-        $prep = $conn->prepare($query);
-        $prep->execute(array($token));
-        $results = $prep->fetchAll();
-        return $results; 
-    }
 ?>
