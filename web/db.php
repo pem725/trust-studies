@@ -2,7 +2,7 @@
     include 'config.php';
     
     function connect_to_db() {
-        $DSN = 'mysql:dbname='. $DB_USER . ';host=' . $DB_HOST;
+        $DSN = 'mysql:dbname='. $DB . ';host=' . $DB_HOST;
         try {
             $conn = new PDO($DSN, $DB_USER, $DB_PASS);
         } catch (PDOException $e) {
@@ -16,6 +16,6 @@
         $prep = $conn->prepare($query);
         $prep->execute(array($token));
         $results = $prep->fetchAll();
-        return $results 
+        return $results; 
     }
 ?>
