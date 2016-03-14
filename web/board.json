@@ -1,25 +1,29 @@
 [
     {
-        "name":"category1",
+        "name":"Presidents",
         "questions":[
             {
                 "value":100,
-               "question":"Question 1 in category 1 for 100 points",
+               "question":"Who was the first president of the United States?",
                 "answers":[
                     {
-                        "text":"A",
+                        "buttonLabel":"A",
+                        "text": "George W. Bush",
+                        "correct":false
+                    },
+                    {
+                        "buttonLabel":"B",
+                        "text": "George Washington",
                         "correct":true
                     },
                     {
-                        "text":"B",
+                        "buttonLabel": "C",
+                        "text":"John Adams",
                         "correct":false
                     },
                     {
-                        "text":"C",
-                        "correct":false
-                    },
-                    {
-                        "text":"D",
+                        "buttonLabel": "D",
+                        "text":"Kanye West",
                         "correct":false
                     }
                 ]

@@ -15,17 +15,25 @@ $(function(){
         var question = $(this).data('question');
         var value = map[category].questions[question].value;
         var answers = $('#answers');
+        var q_id = category + value;
         $('.modal-title').empty().text(map[category].name);
         $('#question').empty().text(map[category].questions[question].question);
         answers.empty();
         $.each(map[category].questions[question].answers, function(i, answer){
             answers.append(
-                '<button class="btn btn-danger answer" ' +
+                '<div class="input-group row">' +
+                '<span class="input-group-btn">' +
+                '<a href="#" class="btn btn-primary answer" id="' + q_id +'"' +
                     'data-category="'+category+'"' +
                     'data-question="'+question+'"' +
                     'data-value="'+value+'"' +
                     'data-correct="'+answer.correct+'"' +
-                    '>'+ answer.text+'</button><br><br>'
+                    '>'+ answer.buttonLabel+'</a>' +
+                '</span>' +
+                '<div class="form-control">'+
+                  '<label for="'+ q_id + '">' + answer.text + '</label>' +
+                '</div>' +
+                '</div><br>'
             )
         });
         $('#question-modal').modal('show');
